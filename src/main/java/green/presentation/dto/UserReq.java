@@ -1,4 +1,4 @@
 package green.presentation.dto;
 
-public class LoginReqDto {
+public class UserReq {
 }
