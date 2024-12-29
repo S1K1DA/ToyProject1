@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     // 회원가입
     public User registerUser(final User user, final String confirmPassword) {
@@ -32,14 +31,9 @@ public class UserService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
-        // 비밀번호 암호화
-        String encryptedPassword = passwordEncoder.encode(user.getPassword());
-
-        // User -> UserEntity 변환 후 저장
         // User -> UserEntity 변환 후 저장
         UserEntity userEntity = UserEntity.builder()
                 .userId(user.getUserId())
-                .password(encryptedPassword) // 암호화된 비밀번호 저장
                 .userName(user.getUserName())
                 .role("USER") // 기본 역할 설정
                 .build();

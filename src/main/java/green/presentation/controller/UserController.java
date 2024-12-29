@@ -8,17 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor
 public class UserController {
 
+    @GetMapping("/")
+    public String mainPage() { return "index"; }
 
-    // 회원가입 페이지 반환
-    @GetMapping("/register")
-    public String RegisterPage() {
-        return "member/register";
+        @GetMapping("/register")
+        public String registerPage() {
+            return "member/register"; // templates/member/register.html 반환
+        }
+
+        @GetMapping("/login")
+        public String loginPage() {
+            return "member/login"; // templates/member/login.html 반환
+        }
     }
-
-    // 로그인 페이지 반환
-    @GetMapping("/login")
-    public String LoginPage() {
-        return "member/login";
-    }
-
-}
