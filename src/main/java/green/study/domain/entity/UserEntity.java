@@ -1,4 +1,4 @@
-package green.domain.entity;
+package green.study.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name = "USER")
+@Table(name = "MEMBER")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

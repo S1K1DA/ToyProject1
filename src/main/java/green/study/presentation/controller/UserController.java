@@ -1,4 +1,4 @@
-package green.presentation.controller;
+package green.study.presentation.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

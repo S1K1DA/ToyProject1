@@ -1,7 +1,6 @@
-package green.domain.model;
+package green.study.domain.model;
 
-import green.domain.entity.UserEntity;
-import lombok.AllArgsConstructor;
+import green.study.domain.entity.UserEntity;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -14,15 +13,6 @@ public class User {
     private String userName;
     private String role;
 
-    // User 모델 -> UserEntity로 변환
-    public UserEntity toEntity() {
-        return UserEntity.builder()
-                .userId(userId)
-                .password(password)
-                .userName(userName)
-                .role(role)
-                .build();
-    }
 
     // UserEntity -> User 변환
     public static User from(UserEntity userEntity) {

@@ -1,8 +1,8 @@
-package green.application.service;
+package green.study.application.service;
 
-import green.domain.entity.UserEntity;
-import green.domain.model.User;
-import green.infrastructure.repository.UserRepository;
+import green.study.domain.entity.UserEntity;
+import green.study.domain.model.User;
+import green.study.infrastructure.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,13 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
+
+
+    // 아이디 중복 여부 확인
+    public boolean isUsernameTaken(String userId) {
+        return userRepository.existsByUserId(userId);
+    }
 
     // 회원가입
     public User registerUser(final User user, final String confirmPassword) {
@@ -31,9 +38,13 @@ public class UserService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
+        // 비밀번호 암호화
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+
         // User -> UserEntity 변환 후 저장
         UserEntity userEntity = UserEntity.builder()
                 .userId(user.getUserId())
+                .password(encodedPassword) // 암호화된 비밀번호 저장
                 .userName(user.getUserName())
                 .role("USER") // 기본 역할 설정
                 .build();

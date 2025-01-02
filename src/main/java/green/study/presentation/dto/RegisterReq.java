@@ -1,6 +1,6 @@
-package green.presentation.dto;
+package green.study.presentation.dto;
 
-import green.domain.model.User;
+import green.study.domain.model.User;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Getter;
