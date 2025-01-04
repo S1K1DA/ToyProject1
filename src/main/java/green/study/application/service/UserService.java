@@ -54,4 +54,26 @@ public class UserService {
         return User.from(savedEntity);
     }
 
+    // 사용자 인증
+    public User authenticate(String userId, String password) {
+        // 사용자 ID로 데이터베이스 조회
+        UserEntity userEntity = userRepository.findByUserId(userId)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 사용자입니다."));
+
+        // 비밀번호 확인
+        if (!passwordEncoder.matches(password, userEntity.getPassword())) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+        }
+
+        // 인증 성공 시 User 객체 반환
+        return User.from(userEntity);
+    }
+
+    // 사용자 인증 (쿠키 기반)
+    public User authenticateByUserId(String userId) {
+        return userRepository.findByUserId(userId)
+                .map(User::from)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 사용자입니다."));
+    }
+
 }
