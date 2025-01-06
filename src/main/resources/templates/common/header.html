@@ -1,9 +1,19 @@
-<header>
+<header xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <h1 class="logo"><a href="/">TasteMate</a></h1>
-    <div class="dropdown">
-        <button class="logout-button dropdown-toggle">메뉴</button>
-        <ul class="dropdown-menu hidden" id="header-menu">
-            <!-- 메뉴는 로그인 상태에 따라 동적으로 추가 -->
+    <nav>
+        <ul>
+            <li sec:authorize="isAuthenticated()">
+                <a th:href="@{/mypage}">마이페이지</a>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+                <a th:href="@{/api/logout}" th:onclick="return confirm('로그아웃 하시겠습니까?');">로그아웃</a>
+            </li>
+            <li sec:authorize="!isAuthenticated()">
+                <a th:href="@{/login}">로그인</a>
+            </li>
+            <li sec:authorize="!isAuthenticated()">
+                <a th:href="@{/register}">회원가입</a>
+            </li>
         </ul>
-    </div>
+    </nav>
 </header>

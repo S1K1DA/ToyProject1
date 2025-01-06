@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +8,7 @@
     <link rel="stylesheet" href="/css/mypage/mypage.css">
 </head>
 <body>
-<!-- 헤더 -->
-<header>
-    <h1 class="logo"><a href="/">TasteMate</a></h1>
-    <div class="dropdown">
-        <button class="logout-button dropdown-toggle">메뉴</button>
-        <ul class="dropdown-menu hidden">
-            <li><a href="/logout" onclick="logout()">로그아웃</a></li>
-        </ul>
-    </div>
-</header>
+<div th:insert="~{common/header :: header}"></div>
 
 <!-- 마이페이지 컨테이너 -->
 <div class="mypage-container">
