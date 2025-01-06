@@ -23,7 +23,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // CSRF 보호 완전히 비활성화
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**","/mypage","/", "/register", "/login", "/static/**", "/css/**", "/js/**", "/images/**").permitAll() // 특정 경로 인증 없이 허용
+                        .requestMatchers("/api/**", "/", "/register", "/login", "/static/**", "/css/**", "/js/**", "/images/**").permitAll() // 특정 경로 인증 없이 허용
                         .anyRequest().authenticated() // 나머지 요청은 인증 필요
                 );
 

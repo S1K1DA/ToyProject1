@@ -48,11 +48,21 @@ public class UserRestController {
 
         // 쿠키 생성
         Cookie cookie = new Cookie("userId", user.getUserId());
-        cookie.setHttpOnly(true);
         cookie.setPath("/");
         cookie.setMaxAge(60 * 60);
         response.addCookie(cookie);
 
         return ResponseEntity.ok("로그인 성공");
     }
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletResponse response) {
+        // userId 쿠키 삭제
+        Cookie cookie = new Cookie("userId", null);
+        cookie.setPath("/");
+        cookie.setMaxAge(0); // 즉시 만료
+        response.addCookie(cookie);
+
+        return ResponseEntity.ok("로그아웃 성공");
+    }
+
 }

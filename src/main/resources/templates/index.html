@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteMate - 메인 페이지</title>
+    <link rel="stylesheet" href="/css/common/header.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        main {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        main h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        main p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
+<!-- 공통 헤더 삽입 -->
+<div th:insert="~{common/header :: header}"></div>
 
+<main>
+    <h1>환영합니다!</h1>
+    <p>최고의 강의를 발견하고, 자신만의 강의를 업로드하세요.</p>
+</main>
+
+<script src="/js/common/basic-header.js"></script>
 </body>
 </html>
