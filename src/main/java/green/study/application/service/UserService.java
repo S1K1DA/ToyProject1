@@ -69,11 +69,11 @@ public class UserService {
         return User.from(userEntity);
     }
 
-    // 사용자 인증 (쿠키 기반)
-    public User authenticateByUserId(String userId) {
-        return userRepository.findByUserId(userId)
-                .map(User::from)
-                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 사용자입니다."));
-    }
+//    // 사용자 인증 (쿠키 기반)
+//    public User authenticateByUserId(String userId) {
+//        return userRepository.findByUserId(userId)
+//                .map(User::from)
+//                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 사용자입니다."));
+//    }
 
 }

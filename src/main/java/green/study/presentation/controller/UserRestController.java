@@ -59,7 +59,7 @@ public class UserRestController {
         Cookie cookie = new Cookie("token", token);
         cookie.setPath("/");
         cookie.setHttpOnly(true);
-        cookie.setMaxAge(60 * 60); // 1시간 유효
+        cookie.setMaxAge(60 * 60); // 1시간 유효1
         response.addCookie(cookie);
 
         // SecurityContext에 인증 정보 설정
