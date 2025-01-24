@@ -1,0 +1,156 @@
+/* 공통 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+/* 업로드 페이지 스타일 */
+.upload-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.add-lecture-button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-lecture-button:hover {
+    background-color: #218838;
+}
+
+.lecture-sections {
+    margin-top: 20px;
+}
+
+.lecture-section {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.lecture-section h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+.input-section {
+    margin-bottom: 15px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.video-upload-section {
+    margin-bottom: 15px;
+}
+
+.video-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.uploaded-videos {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+}
+
+.uploaded-videos p {
+    margin: 0;
+    color: #666;
+    font-style: italic;
+}
+
+.video-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.video-item span {
+    color: #333;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
