@@ -13,35 +13,51 @@
 <div class="upload-container">
     <h2>강의 업로드</h2>
 
-    <!-- 강의 추가 버튼 -->
-    <button id="add-lecture-button" class="add-lecture-button">강의 추가</button>
+    <!-- 대분류와 소분류 -->
+    <div class="category-section">
+        <label for="main-category">대분류</label>
+        <select id="main-category">
+            <option value="programming">프로그래밍</option>
+            <option value="design">디자인</option>
+            <option value="business">비즈니스</option>
+        </select>
 
-    <!-- 강의 섹션 컨테이너 -->
-    <div id="lecture-sections" class="lecture-sections">
-        <!-- 기본 강의 섹션 -->
-        <div class="lecture-section">
-            <h3>강의 1</h3>
-            <!-- 강의명 입력 -->
-            <div class="input-section">
-                <label for="lecture-title-1">강의명</label>
-                <input type="text" id="lecture-title-1" placeholder="강의명을 입력하세요" />
+        <label for="sub-category">소분류</label>
+        <select id="sub-category">
+            <option value="frontend">프론트엔드</option>
+            <option value="backend">백엔드</option>
+            <option value="uiux">UI/UX</option>
+        </select>
+    </div>
+
+    <!-- 강의명 및 대표 이미지 -->
+    <div class="lecture-main">
+        <label for="lecture-title">강의명</label>
+        <input type="text" id="lecture-title" placeholder="강의명을 입력하세요" />
+
+        <label for="lecture-thumbnail">대표 이미지</label>
+        <input type="file" id="lecture-thumbnail" accept="image/*" />
+    </div>
+
+    <!-- 챕터 추가 버튼 -->
+    <button id="add-chapter-button" class="add-chapter-button">챕터 추가</button>
+
+    <!-- 챕터 목록 -->
+    <div id="chapter-list">
+        <!-- 기본 챕터 -->
+        <div class="chapter">
+            <h3>챕터</h3>
+            <div class="chapter-controls">
+                <button class="delete-chapter-button">삭제</button>
             </div>
-            <!-- 챕터명 입력 -->
-            <div class="input-section">
-                <label for="chapter-title-1">챕터명</label>
-                <input type="text" id="chapter-title-1" placeholder="챕터명을 입력하세요" />
-            </div>
-            <!-- 동영상 업로드 -->
-            <div class="video-upload-section">
-                <label for="video-title-1">동영상명</label>
-                <div class="video-upload-wrapper">
-                    <input type="text" id="video-title-1" placeholder="동영상명을 입력하세요" />
-                    <button class="upload-button">동영상 올리기</button>
-                </div>
-                <div class="uploaded-videos">
-                    <p>아직 업로드된 동영상이 없습니다.</p>
-                </div>
-            </div>
+            <label for="chapter-title-1">챕터명</label>
+            <input type="text" id="chapter-title-1" placeholder="챕터명을 입력하세요" />
+
+            <label for="chapter-description-1">챕터소개</label>
+            <textarea id="chapter-description-1" placeholder="챕터 내용을 입력하세요"></textarea>
+
+            <label for="chapter-video-1">동영상 업로드</label>
+            <input type="file" id="chapter-video-1" accept="video/*" />
         </div>
     </div>
 </div>
